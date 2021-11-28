@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ae6934cb-fc70-45f9-831d-26ace530bf2b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from Stafi]]>
+	</queryString>
+	<field name="Emri" class="java.lang.String"/>
+	<field name="Mbiemri" class="java.lang.String"/>
+	<field name="Tel" class="java.lang.Integer"/>
+	<field name="LlojiPunes" class="java.lang.String"/>
+	<group name="Emri">
+		<groupExpression><![CDATA[$F{Emri}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="7" width="555" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="292ffa0c-aaaa-4b16-a411-176258768fb7"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" isPrintRepeatedValues="false" x="2" y="0" width="479" height="24" forecolor="#FFFFFF" uuid="b4e29572-70aa-4944-adc5-409dfee59870"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{Emri}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<group name="Mbiemri">
+		<groupExpression><![CDATA[$F{Mbiemri}]]></groupExpression>
+		<groupHeader>
+			<band height="30">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="0" width="555" height="29" backcolor="#009999" uuid="5ef97a41-ab3e-45e4-8e27-4f7d50082f26"/>
+					<textField>
+						<reportElement positionType="Float" x="1" y="0" width="550" height="26" forecolor="#000000" uuid="4e9826c3-212c-42cc-b97b-fca56dea921f"/>
+						<textElement>
+							<font fontName="Times New Roman" size="16" isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{Mbiemri}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="132" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="451" height="95" backcolor="#000000" uuid="41dc5a9f-f2d6-46da-8147-fd1b24091c79"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" forecolor="#009999" uuid="f0d1e618-2e16-4007-806c-00e1cc53e590"/>
+					<textElement>
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[- EMERALD -]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="157" y="66" width="249" height="29" uuid="1f693f34-206d-4955-a78c-38683b9116b4"/>
+					<textElement>
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Hotel Management]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="100" width="451" height="32" forecolor="#000000" backcolor="#009999" uuid="fcea43c8-752c-41ec-91e6-ba098606b5e8"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="307" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="dd192f6c-6e0a-49d1-89ab-2a038e27d3fd"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image>
+				<reportElement x="451" y="0" width="107" height="112" uuid="1267974d-2a3e-4a31-a547-fefdf9917bbc"/>
+				<imageExpression><![CDATA["C:\\Users\\hp\\Documents\\HotelMANAGEMENTGroupProject\\src\\Report\\emerald.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="7" width="277" height="18" forecolor="#000000" uuid="9444f269-5daf-44c8-a62f-fe99db260b2d"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Tel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="277" y="7" width="277" height="18" forecolor="#000000" uuid="d8e8b685-610b-4a2e-b490-e3be7c79a94c"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[LlojiPunes]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18" backcolor="#009999" uuid="21b2647d-9967-47ec-ad56-f07c6256c6df"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="277" height="18" uuid="707028bd-95a7-425a-b320-c6d65bee0c2c"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Tel}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="277" y="0" width="277" height="18" uuid="1a237ed2-71d1-474c-b332-c5d205de9638"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{LlojiPunes}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="a49cf629-406b-47ad-aee8-1a04a671475b"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000" uuid="dd8ef610-73c7-4597-b24e-acf8b5b5f128"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF" uuid="69d15dd5-30b1-4311-aa6c-79162a225cb3"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF" uuid="a89c68d9-1dba-4fb3-bbd0-c5a68f579597"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF" uuid="e0e91e10-6259-43df-8204-a31befdbdc1a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

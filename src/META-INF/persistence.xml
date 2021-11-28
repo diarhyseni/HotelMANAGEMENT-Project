@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="HotelMANAGEMENTGroupProjectPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>BLL.FoodMenu</class>
+    <class>BLL.Perdoruesi</class>
+    <class>BLL.Room</class>
+    <class>BLL.Ankesa</class>
+    <class>BLL.Stafi</class>
+    <class>BLL.Personi</class>
+    <class>BLL.Roli</class>
+    <class>BLL.StaffRoom</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=CRUDHO8"/>
+      <property name="javax.persistence.jdbc.user" value="diarhyseni31"/>
+      <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+      <property name="javax.persistence.jdbc.password" value="diarhyseni31"/>
+    </properties>
+  </persistence-unit>
+</persistence>
