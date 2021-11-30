@@ -337,7 +337,7 @@ public class StafiGUI extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_stafi2ActionPerformed
 
     private void gjeneroRaportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gjeneroRaportActionPerformed
-            try{
+           /* try{
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             Connection con=DriverManager.getConnection("jdbc:sqlserver://localhost;databaseName=CRUDHO8","diarhyseni31","diarhyseni31");
             
@@ -356,7 +356,7 @@ public class StafiGUI extends javax.swing.JInternalFrame {
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,e);
         }
-    
+    */
     }//GEN-LAST:event_gjeneroRaportActionPerformed
 
     
